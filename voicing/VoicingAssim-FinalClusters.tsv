@@ -1,5 +1,5 @@
 			Ident(voi)	Ident(voi)/LexCat	*D#	*D	*DD#	Agree
-			F	Pos F	M	M	M	M
+			Ident(voi)	Id(voi)/LexCat	*D#	*D	*DD#	Agree
 tak	tak	100						
 	tag		1	1	1	1		
 	dak		1	1		1		
