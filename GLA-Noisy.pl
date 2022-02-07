@@ -1,7 +1,5 @@
 #!/usr/bin/perl
 $verbose = 0;
-# Set update_rule to "Boersma" to use Boersma's update rule
-$update_rule = "Boersma";
 
 $inputfile = $ARGV[0];
 while (!$valid_inputfile) {
@@ -89,6 +87,16 @@ if ($evaluation_noise eq "") {
 	$evaluation_noise = 2; 
 }
 print "\tEvaluation noise: $evaluation_noise\n";
+
+$update_rule = $ARGV[10];
+if ($update_rule eq "") {
+	# Set update_rule to "Boersma" to use Boersma's update rule
+	$update_rule = "Boersma";
+} else {
+	# Probably a better default is Magri's update rule
+	$update_rule = "Magri";
+}
+
 
 $tiny = 1e-20;
 
