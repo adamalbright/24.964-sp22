@@ -96,6 +96,7 @@ if ($update_rule eq "") {
 	# Probably a better default is Magri's update rule
 	$update_rule = "Magri";
 }
+print "\tUpdate rule: $update_rule\n";
 
 
 $tiny = 1e-20;
