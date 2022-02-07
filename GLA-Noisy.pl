@@ -187,6 +187,8 @@ while ($line = <CONSTRAINTS>) {
 		$type = "M";		
     } elsif ($type =~ /^[Ff]/) {
 		$type = "F";        
+    } elsif ($type =~ /^[Pp]os(itional)? [Ff]/) {
+		$type = "F";        
     } elsif ($type =~ /^\d+$/) {
 		# Just digits: take this as an initial ranking value
 	    $ranking_value[$constraint_index{$name}] = $type;
@@ -206,7 +208,10 @@ while ($line = <CONSTRAINTS>) {
 for (my $c = 0; $c <= $number_of_constraints; $c++) {
 	if ($constraint_types[$c] eq "F") {
 		$ranking_value[$c] = $initial_faithfulness_ranking;
-	} elsif ($constraint_types[$c] ne "Prespecified") {
+	} elsif ($constraint_types[$c] eq "Pos F") {
+		$ranking_value[$c] = $initial_pos_faithfulness_ranking;
+	}
+	 elsif ($constraint_types[$c] ne "Prespecified") {
 		$ranking_value[$c] = $initial_markedness_ranking;
 	}
 }
