@@ -1,0 +1,10 @@
+Ident(voi)	F
+Ident(voi)/LexCat	Pos F
+*D#	M
+*D	M
+*DD#	M
+Agree	M
+Ident(voi)/_V	Pos F
+*VoiObst (CM OLD)	M
+*VoiObst (CM NEW)	M
+Agree _#	M
