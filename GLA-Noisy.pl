@@ -15,6 +15,7 @@ while (!$valid_inputfile) {
         print "Input file $inputfile does not exist.  Please try again.\n\n";        
     }
 }
+print "Input file: $inputfile\n";
 
 # Also, in order to impose an initial ranking of M >> F, we need to find out
 # which constraints are M, and which are F
@@ -33,51 +34,65 @@ while (!$valid_constraintsfile) {
 		print "Warning! invalid constraints file.";
 	}
 }
+print "Constraints file: $constriantsfile\n";
+
 
 # GLA Parameters
 $number_of_learning_trials = $ARGV[2];
 if ($number_of_learning_trials eq "") {
 	$number_of_learning_trials = 5000;
 }
+print "\tNumber of learning trials: $number_of_learning_trials\n";
+
 
 $number_of_testing_trials = $ARGV[3];
 if ($number_of_testing_trials eq "") {
 	$number_of_testing_trials = 1000;	
 }
+print "\tNumber of testing trials: $number_of_testing_trials\n";
 
 $initial_markedness_ranking = $ARGV[4];
 if ($initial_markedness_ranking eq "") {
 	$initial_markedness_ranking = 100;
 }
+print "\tInitial markedness value: $initial_markedness_ranking\n";
 
 $initial_faithfulness_ranking = $ARGV[5];
 if ($initial_faithfulness_ranking eq "") {
 	$initial_faithfulness_ranking = 0;
 }
+print "\tInitial faithfuless value: $initial_faithfulness_ranking\n";
 
 $initial_pos_faithfulness_ranking = $ARGV[6];
 if ($initial_pos_faithfulness_ranking eq "") {
 	$initial_pos_faithfulness_ranking = 0;
 }
+print "\tInitial positional faithfuless value: $initial_pos_faithfulness_ranking\n";
 
 $initial_plasticity = $ARGV[7];
 if ($initial_plasticity eq "") {
 	$initial_plasticity = 1;
 }
+print "\tInitial plasticity: $initial_plasticity\n";
 
 
 $plasticity_decrement = $ARGV[8];
 if ($plasticity_decrement eq "") {
 	$plasticity_decrement = 0;
 }
+print "\tPlasticity decrement: $plasticity_decrement\n";
 
 
 $evaluation_noise = $ARGV[9];
 if ($evaluation_noise eq "") {
 	$evaluation_noise = 2; 
 }
+print "\tEvaluation noise: $evluation_noise\n";
 
 $tiny = 1e-20;
+
+
+
 
 # Praat assumes that if multiple constraints have the same ranking value, they are crucially tied--
 # that is, violations sum across the stratum.  This is unlike more standard assumptions about refining
@@ -188,7 +203,7 @@ while ($line = <CONSTRAINTS>) {
     } elsif ($type =~ /^[Ff]/) {
 		$type = "F";        
     } elsif ($type =~ /^[Pp]os(itional)? [Ff]/) {
-		$type = "F";        
+		$type = "Pos F";        
     } elsif ($type =~ /^\d+$/) {
 		# Just digits: take this as an initial ranking value
 	    $ranking_value[$constraint_index{$name}] = $type;
