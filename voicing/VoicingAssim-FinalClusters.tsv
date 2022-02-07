@@ -1,0 +1,35 @@
+			Ident(voi)	Ident(voi)/LexCat	*D#	*D	*DD#	Agree
+			F	Pos F	M	M	M	M
+tak	tak	100						
+	tag		1	1	1	1		
+	dak		1	1		1		
+	dag		2	2	1	2		
+dak	dak	100				1		
+	tak		1	1				
+	dag		1	1	1	2		
+	tag		2	2	1	1		
+tag	tag	100			1	1		
+	tak		1	1				
+	dag		1	1	1	2		
+	dak		2	2		1		
+dag	dag	100			1	2		
+	dak		1	1		1		
+	tag		1	1	1	1		
+	tak		2	2				
+-ik (adj)	-ik	100						
+	-ig		1		1	1		
+-ig (adj, hypothetical)	-ik	100	1					
+	-ig				1	1		
+...Vk-t	...Vkt	100						
+	...Vgd		2	1	1	2	1	
+...Vg-t	...Vgt							1
+	...Vgd		1		1		1	
+	...Vkt	100	1	1				
+tagd	tagd				1	2	1	
+	tagt		1	1		1		1
+	takd		1	1	1	1		1
+	takt		2	2				
+tagt	tagd		1	1	1	2	1	
+	tagt					1		1
+	takd		2	2	1	1		1
+	takt		1	1				
