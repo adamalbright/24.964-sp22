@@ -89,7 +89,7 @@ if ($evaluation_noise eq "") {
 print "\tEvaluation noise: $evaluation_noise\n";
 
 $update_rule = $ARGV[10];
-if ($update_rule eq "") {
+if ($update_rule eq "Boersma") {
 	# Set update_rule to "Boersma" to use Boersma's update rule
 	$update_rule = "Boersma";
 } else {
