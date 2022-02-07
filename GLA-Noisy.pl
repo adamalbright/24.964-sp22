@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 $verbose = 0;
-
+# Set update_rule to "Boersma" to use Boersma's update rule
+$update_rule = "Boersma";
 
 $inputfile = $ARGV[0];
 while (!$valid_inputfile) {
@@ -87,7 +88,7 @@ $evaluation_noise = $ARGV[9];
 if ($evaluation_noise eq "") {
 	$evaluation_noise = 2; 
 }
-print "\tEvaluation noise: $evluation_noise\n";
+print "\tEvaluation noise: $evaluation_noise\n";
 
 $tiny = 1e-20;
 
@@ -286,23 +287,70 @@ for (my $t = 1; $t <= $number_of_learning_trials; $t++) {
 		
 		$number_of_error_trials++;
 
-		for (my $c = 0; $c <= $number_of_constraints; $c++) {			
-			$new_ranking_value = $ranking_value[$c];
-			if ($violations[$training_input][$training_output][$c] < $violations[$training_input][$my_output][$c]) {
-				$new_ranking_value += $current_plasticity;
-			} elsif ($violations[$training_input][$training_output][$c] > $violations[$training_input][$my_output][$c]) {
-				$new_ranking_value -= $current_plasticity;
-				# A constraint: don't go below 0
-				if ($new_ranking_value < 0) {
-					$new_ranking_value = 0;
+		if ($update_rule eq "Boersma") {
+			for (my $c = 0; $c <= $number_of_constraints; $c++) {			
+				$new_ranking_value = $ranking_value[$c];
+				if ($violations[$training_input][$training_output][$c] < $violations[$training_input][$my_output][$c]) {
+					$new_ranking_value += $current_plasticity;
+				} elsif ($violations[$training_input][$training_output][$c] > $violations[$training_input][$my_output][$c]) {
+					$new_ranking_value -= $current_plasticity;
+					# A constraint: don't go below 0
+					if ($new_ranking_value < 0) {
+						$new_ranking_value = 0;
+					}
+				} else {
+					# equal violations, don't update
 				}
-			} else {
-				# equal violations, don't update
+				if ($verbose) {print "\t$ranking_value[$c]\t$new_ranking_value\t$constraintnames[$c]\t$mdp[$c]\n";}
+				$ranking_value[$c] = $new_ranking_value;
 			}
-			if ($verbose) {print "\t$ranking_value[$c]\t$new_ranking_value\t$constraintnames[$c]\t$mdp[$c]\n";}
-			$ranking_value[$c] = $new_ranking_value;
-		}
+		} else {
+			# Magri's update rule: 
+			# Demote all undominated loser-preferring constraints by 1
+			# Promote winner-preferring constraints by the number of undominated loser-preferring constraints / number of winner-preferrers + 1 (or some n > 0)
+			my @winner_preferrers = ();
+			my $highest_winner_preferrer = undef;
+			my @undominated_loser_preferrers = ();
 		
+			# This is inefficient, but should do the trick
+			# First find the winner-preferrers
+			for (my $c = 0; $c <= $number_of_constraints; $c++) {
+				if ($violations[$training_input][$training_output][$c] < $violations[$training_input][$my_output][$c]) {
+					push(@winner_preferrers, $c);
+					if ($ranking_value[$c] > $highest_winner_preferrer) {
+						$highest_winner_preferrer = $c;
+					}
+				}
+			}
+		
+			# Now find the undominated loser-preferrers
+			for (my $c = 0; $c <= $number_of_constraints; $c++) {
+				if ($violations[$training_input][$training_output][$c] > $violations[$training_input][$my_output][$c]) {
+					# This is a loser-preferrer.  Is it undominated by a W?
+					if ($ranking_value[$c] >= $ranking_value[$highest_winner_preferrer]) {
+						# Yes, this one is undominated.  add to the count of loser_preferrers, and demote it
+						push(@undominated_loser_preferrers, $c);
+					
+						$new_ranking_value = $ranking_value[$c];
+						$new_ranking_value -= $current_plasticity;
+						# A constraint: don't go below 0
+						if ($new_ranking_value < 0) {
+							$new_ranking_value = 0;
+						}					
+						$ranking_value[$c] = $new_ranking_value;
+						if ($verbose) {print "\t$ranking_value[$c]\t$new_ranking_value\t$constraintnames[$c]\t$mdp[$c]\n";}
+					}
+				}
+			}
+		
+			# Now go back and promote all the W's by the number of undominated loser-preferrers
+			for (my $c = 0; $c < scalar(@winner_preferrers); $c++) {
+				$new_ranking_value = $ranking_value[$winner_preferrers[$c]];
+				$new_ranking_value += $current_plasticity * scalar(@undominated_loser_preferrers)/(scalar(@winner_preferrers) + $calibration_threshold);
+				$ranking_value[$winner_preferrers[$c]] = $new_ranking_value;
+				if ($verbose) {print "\t$ranking_value[$winner_preferrers[$c]]\t$new_ranking_value\t$constraintnames[$winner_preferrers[$c]]\t$mdp[$winner_preferrers[$c]]\n";}
+			}
+		}
 	}
 	
 	if ($verbose) {print "\n"; }
