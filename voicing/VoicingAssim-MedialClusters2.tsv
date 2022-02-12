@@ -1,0 +1,53 @@
+			Ident(voi)	Ident(voi)/LexCat	*D#	*D	*VoiObst (CM OLD)	*VoiObst (CM NEW)	*DD#	Agree	Ident(voi)/_V	Agree _#
+			Ident(voi)	Id(voi)/LexCat	*D#	*D	ₒ*D	ₙ*D	*DD#	Agree	Id(voi)/_V	Agree _#
+tak	tak	100										
+	tag		1	1	1	1		1				
+	dak		1	1		1		1			1	
+	dag		2	2	1	2		2			1	
+dak	dak	100				1	1					
+	tak		1	1							1	
+	dag		1	1	1	2	1	1				
+	tag		2	2	1	1		1			1	
+tag	tag	100			1	1	1					
+	tak		1	1								
+	dag		1	1	1	2	1	1			1	
+	dak		2	2		1		1			1	
+dag	dag	100			1	2	2					
+	dak		1	1		1	1					
+	tag		1	1	1	1	1				1	
+	tak		2	2							1	
+-ik (adj)	-ik	100										
+	-ig		1		1	1		1				
+-dik (adj)	-dik	100				1	1					
+	-tik		1								1	
+-ig (adj, hypothetical)	-ik	100	1									
+	-ig				1	1	1					
+...Vk-t	...Vkt	100										
+	...Vgd		2	1	1	2		2	1			
+...Vg-t	...Vgt					1	1			1		1
+	...Vgd		1		1	2	1	1	1			
+	...Vkt	100	1	1								
+tagd	tagd				1	2	2		1			
+	tagt		1	1		1	1			1		1
+	takd		1	1	1	1	1			1		1
+	takt		2	2								
+tagt	tagd		1	1	1	2	1	1	1			
+	tagt					1	1			1		1
+	takd		2	2	1	1		1		1		1
+	takt		1	1								
+apta	apta	100										
+	abta		1	1		1		1		1		
+	apda		1	1		1		1		1	1	
+	abda		2	2		2		2			1	
+abda	abda	100				2	2					
+	abta		1	1		1	1			1		
+	apda		1	1		1	1			1	1	
+	apta		2	2							1	
+abta	abta	12				1	1			1		
+	apta	88	1	1								
+	apda		2	2		1		1		1	1	
+	abda		1	1		2	1	1			1	
+apda	apda	81				1	1			1		
+	abda	19	1	1		2	1	1				
+	apta		1	1							1	
+	abta		2	2		1		1		1	1	
