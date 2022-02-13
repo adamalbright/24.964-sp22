@@ -51,7 +51,7 @@ except IOError as error:
 	sys.exit()
 
 # We'll look for other files, with related names
-filename_prefix = re.sub(r'\.txt$', '', input_filename)
+filename_prefix = re.sub(r'\.(txt|tsv)$', '', input_filename)
 
 # Let's open a log file
 log_filename = filename_prefix + ".log"
