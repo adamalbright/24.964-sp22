@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 $verbose = 0;
-$ranking_file_interval = 10;
+$ranking_file_interval = 1000;
 
 $inputfile = $ARGV[0];
 while (!$valid_inputfile) {
