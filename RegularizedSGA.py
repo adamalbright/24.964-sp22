@@ -188,7 +188,7 @@ log_file.write( "Constraint types: %s\n\n" %  initial_weights)
 if len(sys.argv) > 2:
 	regularization_filename = sys.argv[2]
 else:
-	regularization_filename = filename_prefix + ".regularize"
+	regularization_filename = filename_prefix + ".regularize.tsv"
 
 try:	
 	regularization_file = open(regularization_filename, 'r').read().splitlines()
