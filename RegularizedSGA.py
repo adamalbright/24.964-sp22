@@ -161,7 +161,7 @@ log_file.write('Length of training data: %s inputs, %s outputs\n\n' % (len(train
 initial_weights = [ '' ]*len(constraint_names)
 
 filename_prefix = re.sub('\.[^\.]*$', '', input_filename)
-constraints_filename = filename_prefix + ".constraints"
+constraints_filename = filename_prefix + ".constraints.tsv"
 constraints_file = open(constraints_filename, 'r').read().splitlines()
 for line in constraints_file:
 	name, type, *rest = line.split('\t')
