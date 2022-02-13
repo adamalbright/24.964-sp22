@@ -1,0 +1,10 @@
+Ident(voi)	0	.0001
+Ident(voi)/LexCat	2	.0001
+*D#	10	.0001
+*D	10	.0001
+*VoiObst (CM OLD)	10	.0001
+*VoiObst (CM NEW)	10	.0001
+*DD#	10	.0001
+Agree	10	.0001
+Ident(voi)/_V	2	.0001
+Agree _#	10	.0001
