@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 $verbose = 0;
+$ranking_file_interval = 10;
 
 $inputfile = $ARGV[0];
 while (!$valid_inputfile) {
@@ -246,11 +247,13 @@ printf RANKINGSFILE "Time\t". join("\t",@constraintnames)."\n";
 for (my $t = 1; $t <= $number_of_learning_trials; $t++) {
 	
 	# Save the current ranking values  (could also be put in with learning, to write values only when things actually change)
-	printf RANKINGSFILE "$t";
-	for (my $c = 0; $c <= $number_of_constraints; $c++) {			
-			printf RANKINGSFILE "\t$ranking_value[$c]";
-	}	
-	printf RANKINGSFILE "\n";
+	if ($t % $ranking_file_interval == 0) {
+		printf RANKINGSFILE "$t";
+		for (my $c = 0; $c <= $number_of_constraints; $c++) {			
+				printf RANKINGSFILE "\t$ranking_value[$c]";
+		}	
+		printf RANKINGSFILE "\n";
+	}
 
 	# a trial starts with an (input,output) pair sampled randomly
 	# from the training corpus
