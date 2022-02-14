@@ -29,7 +29,7 @@ dag	dag	100			1	2	2
 -dik (adj)	-dik	100				1	1															
 	-tik		1								1											
 -ig (adj, hypothetical)	-ik		1									1										
-	-ig				1	1	1															
+	-ig	100			1	1	1															
 ...Vk-t	...Vkt	100																				
 	...Vgd		2	1	1	2		2	1			1										
 	...Vk															1				1		
@@ -42,13 +42,13 @@ dag	dag	100			1	2	2
 tagd	tagd				1	2	2		1													
 	tagt		1	1		1	1			1		1	1									
 	takd		1	1	1	1	1			1			1									
-	takt		2	2								1										
+	takt	100	2	2								1										
 	tag															1	1			1		
 	tagəd														1							
 tagt	tagd		1	1	1	2	1	1	1			1										
 	tagt					1	1			1			1									
 	takd		2	2	1	1		1		1		1	1									
-	takt		1	1																		
+	takt	100	1	1																		
 	tag															1	1			1		
 	tagət														1							
 apta	apta	100																				
@@ -104,11 +104,11 @@ fɛst+gɪʃtɛlt	fɛstgɪʃtɛlt	81				1	1			1
 	fɛsdgɪʃtɛlt		1	1		2	1	1		1												
 	fɛzdgɪʃtɛlt	19	2	2		3	1	2														
 	fɛztgɪʃtɛlt		1	1		2	1	1		2												
-ɔn-nɛmn	ɔnnɛmən													1								
-	ɔn12ɛmən	100																			1	
-	ɔn2ɛmən															1			1			
-	ɔn1ɛmən															1	1	1				
-	ɔnənɛmən														1							1
+ɔn-nɛmn	ɔnnɛmən													1	1							
+	ɔn12ɛmən	100													1						1	
+	ɔn2ɛmən														1	1			1			
+	ɔn1ɛmən														1	1	1	1				
+	ɔnənɛmən														2							1
 klʊɡ1+k2ɪnd	klʊɡ1k2ɪnd	12			1	2	2			1												
 	klʊk1k2ɪnd		1	1	1	1	1							1								
 	klʊk2ɪnd				1	1	1									1	1		1			
