@@ -7,6 +7,7 @@ Ident(voi)/LexCat	Pos F
 *DD#	M
 Agree	M
 Ident(voi)/_V	Pos F
+Ident(voi)/_#	Pos F
 Agree _#	M
 *C:	M
 Dep(ə)	F
