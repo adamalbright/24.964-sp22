@@ -1,0 +1,121 @@
+			Ident(voi)	Ident(voi)/LexCat	*D#	*D	*VoiObst (CM OLD)	*VoiObst (CM NEW)	*DD#	Agree	Ident(voi)/_V	Agree _#	*C:	*CiCi	Dep(ə)	Max(C)	Max(C)/Root	Max(C)/_V	Max(C)/V_	Max(C)/_#	Uniformity	*CᵢəCᵢ
+			Ident(voi)	Id(voi)/LexCat	*D#	*D	ₒ*D	ₙ*D	*DD#	Agree	Id(voi)/_V	Agree _#	*C:	*CiCi	Dep(ə)	Max(C)	Max(C)/Root	Max(C)/_V	Max(C)/V_	Max(C)/_#	Uniformity	*CᵢəCᵢ
+tak	tak	1																				
+	tag		1	1	1	1		1														
+	dak		1	1		1		1			1											
+	dag		2	2	1	2		2			1											
+	ta															1	1		1			
+	takə														1							
+dak	dak	1				1	1															
+	tak		1	1							1											
+	dag		1	1	1	2	1	1														
+	tag		2	2	1	1		1			1											
+	da															1	1		1			
+	dakə					1	1								1							
+tag	tag	1			1	1	1															
+	tak		1	1																		
+	dag		1	1	1	2	1	1			1											
+	dak		2	2		1		1			1											
+	ta															1	1		1			
+	tagə					1	1								1							
+dag	dag	1			1	2	2															
+	dak		1	1		1	1															
+	tag		1	1	1	1	1				1											
+	tak		2	2							1											
+	da					1	1									1	1		1			
+	dagə					2	2								1							
+-ik (adj)	-ik	1																				
+	-ig		1		1	1		1														
+-dik (adj)	-dik	1				1	1															
+	-tik		1								1											
+-ig (adj, hypothetical)	-ik		1																			
+	-ig				1	1	1															
+...Vk-t	...Vkt	1																				
+	...Vgd		2	1	1	2		2	1													
+	...Vk															1				1		
+	...Vkət														1							
+...Vg-t	...Vgt					1	1			1		1										
+	...Vgd		1		1	2	1	1	1													
+	...Vkt	1	1	1																		
+	...Vg															1				1		
+	...Vgət														1							
+tagd	tagd				1	2	2		1													
+	tagt		1	1		1	1			1		1										
+	takd		1	1	1	1	1			1		1										
+	takt		2	2																		
+	tag															1	1			1		
+	tagəd														1							
+tagt	tagd		1	1	1	2	1	1	1													
+	tagt					1	1			1		1										
+	takd		2	2	1	1		1		1		1										
+	takt		1	1																		
+	tag															1	1			1		
+	tagət														1							
+apta	apta	1																				
+	abta		1	1		1		1		1												
+	apda		1	1		1		1		1	1											
+	abda		2	2		2		2			1											
+	apa															1	1	1				
+	ata															1	1		1			
+	apəta														1							
+abda	abda	1				2	2															
+	abta		1	1		1	1			1												
+	apda		1	1		1	1			1	1											
+	apta		2	2							1											
+	ada					1	1									1	1		1			
+	aba					1	1									1	1	1				
+	abəda					2	2								1							
+abta	abta	0				1	1			1												
+	apta	1	1	1																		
+	apda		2	2		1		1		1	1											
+	abda		1	1		2	1	1			1											
+	ata															1	1		1			
+	aba					1	1									1	1	1				
+	abəta														1							
+apda	apda	1				1	1			1												
+	abda	0	1	1		2	1	1														
+	apta		1	1							1											
+	abta		2	2		1		1		1	1											
+	ada					1	1									1	1	1				
+	apa															1	1		1			
+	apəda														1							
+pta	pta	1																				
+	bta		1	1		1		1		1												
+	bda		2	2		2		2			1											
+	ta															1	1					
+	pəta														1							
+bda	bda	1				2	2															
+	pda		1	1		1	1			1												
+	pta		2	2							1											
+	da					1	1									1	1					
+	bəda					2	2								1							
+bta	pta	1	1	1																		
+	bta	0				1	1			1												
+	bda		1	1		2	1	1			1											
+	ta															1	1					
+	bəta					1	1								1							
+pda	pda	1				1	1															
+	bda		1	1		2	1	1		1												
+	pta		1	1							1											
+	da					1	1									1	1					
+	pəda														1							
+fɛst+gɪʃtɛlt	fɛstgɪʃtɛlt	1				1	1			1												
+	fɛstkɪʃtɛlt		1	1							1											
+	fɛsdgɪʃtɛlt		1	1		2	1	1		1												
+	fɛzdgɪʃtɛlt	0	2	2		3	1	2														
+	fɛztgɪʃtɛlt		1	1		2	1	1		2												
+ɔn-nɛmn	ɔnnɛmən												1	1								
+	ɔnᵢⱼɛmən																				1	
+	ɔnⱼɛmən	1														1			1			
+	ɔnᵢɛmən															1	1	1				
+	ɔnənɛmən														1							1
+klʊɡ1+k2ɪnd	klʊɡ1k2ɪnd	0				1	1			1				1								
+	klʊk1k2ɪnd		1	1									1	1								
+	klʊk2ɪnd	1														1	1		1			
+	klʊɡ1ɪnd					1	1									1	1	1				
+	klʊɡəkɪnd					1	1								1							1
+avɛk1-ɡ2eɪn	avɛk1ɡ2eɪn	1				1	1			1				1								
+	avɛɡ1ɡ1eɪn		1			2	1	1					1	1								
+	avɛɡ2eɪn	0				1	1									1			1			
+	avɛk1eɪn															1	1	1				
+	avɛkəɡeɪn					1	1								1							1
