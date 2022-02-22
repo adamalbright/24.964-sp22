@@ -5,10 +5,10 @@ $ranking_file_interval = 1000;
 $inputfile = $ARGV[0];
 while (!$valid_inputfile) {
     if ($inputfile eq "") {
-        print "Enter name of input file: ";        
-	$inputfile = <STDIN>;	
-	chomp($inputfile);	
-    }  
+        print "Enter name of input file: ";
+	$inputfile = <STDIN>;
+	chomp($inputfile);
+    }
     if (-e $inputfile) {
 	$valid_inputfile = 1;	
     } else {
@@ -98,6 +98,13 @@ if ($update_rule eq "Boersma") {
 	$update_rule = "Magri";
 }
 print "\tUpdate rule: $update_rule\n";
+
+$initial_oo_faithfulness_ranking = $ARGV[11];
+if ($initial_oo_faithfulness_ranking eq "") {
+	$initial_00_faithfulness_ranking = 150;
+}
+print "\tInitial output_output faithfuless value: $initial_oo_faithfulness_ranking\n";
+
 
 
 $tiny = 1e-20;
@@ -215,6 +222,8 @@ while ($line = <CONSTRAINTS>) {
 		$type = "F";        
     } elsif ($type =~ /^[Pp]os(itional)? [Ff]/) {
 		$type = "Pos F";        
+    } elsif ($type =~ /^([Oo][Oo]|[Oo]utput-output|BD) [Ff]/) {
+		$type = "OO F";        
     } elsif ($type =~ /^\d+$/) {
 		# Just digits: take this as an initial ranking value
 	    $ranking_value[$constraint_index{$name}] = $type;
@@ -236,6 +245,8 @@ for (my $c = 0; $c <= $number_of_constraints; $c++) {
 		$ranking_value[$c] = $initial_faithfulness_ranking;
 	} elsif ($constraint_types[$c] eq "Pos F") {
 		$ranking_value[$c] = $initial_pos_faithfulness_ranking;
+	} elsif ($constraint_types[$c] eq "OO F") {
+		$ranking_value[$c] = $initial_oo_faithfulness_ranking;
 	}
 	 elsif ($constraint_types[$c] ne "Prespecified") {
 		$ranking_value[$c] = $initial_markedness_ranking;
