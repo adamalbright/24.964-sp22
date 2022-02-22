@@ -1,0 +1,132 @@
+			Ident(voi)	Ident(voi)/LexCat	*D#	*D	*VoiObst (CM OLD)	*VoiObst (CM NEW)	*DD#	Agree	Ident(voi)/_V	Ident(voi)/_#	Agree _#	*C:	Dep(ə)	Max(C)	Max(C)/Root	Max(C)/_V	Max(C)/V_	Max(C)/_#	Uniformity	*CᵢəCᵢ
+			Ident(voi)	Id(voi)/LexCat	*D#	*D	ₒ*D	ₙ*D	*DD#	Agree	Id(voi)/_V	Ident(voi)/_#	Agree _#	*C:	Dep(ə)	Max(C)	Max(C)/Root	Max(C)/_V	Max(C)/V_	Max(C)/_#	Uniformity	*CᵢəCᵢ
+tak	tak	100																				
+	tag		1	1	1	1		1				1										
+	dak		1	1		1		1			1											
+	dag		2	2	1	2		2			1	1										
+	ta															1	1		1			
+	takə														1							
+dak	dak	100				1	1															
+	tak		1	1							1											
+	dag		1	1	1	2	1	1				1										
+	tag		2	2	1	1		1			1	1										
+	da															1	1		1			
+	dakə					1	1								1							
+tag	tag	100			1	1	1															
+	tak		1	1								1										
+	dag		1	1	1	2	1	1			1											
+	dak		2	2		1		1			1	1										
+	ta															1	1		1			
+	tagə					1	1								1							
+dag	dag	100			1	2	2															
+	dak		1	1		1	1					1										
+	tag		1	1	1	1	1				1											
+	tak		2	2							1	1										
+	da					1	1									1	1		1			
+	dagə					2	2								1							
+-ik (adj)	-ik	100																				
+	-ig		1		1	1		1				1										
+-dik (adj)	-dik	100				1	1															
+	-tik		1								1											
+-ig (adj, hypothetical)	-ik		1									1										
+	-ig	100			1	1	1															
+...Vk-t	...Vkt	100																				
+	...Vgd		2	1	1	2		2	1			1										
+	...Vk															1				1		
+	...Vkət														1							
+...Vg-t	...Vgt					1	1			1			1									
+	...Vgd		1		1	2	1	1	1			1										
+	...Vkt	100	1	1																		
+	...Vg															1				1		
+	...Vgət														1							
+tagd	tagd				1	2	2		1													
+	tagt		1	1		1	1			1		1	1									
+	takd		1	1	1	1	1			1			1									
+	takt	100	2	2								1										
+	tag															1	1			1		
+	tagəd														1							
+tagt	tagd		1	1	1	2	1	1	1			1										
+	tagt					1	1			1			1									
+	takd		2	2	1	1		1		1		1	1									
+	takt	100	1	1																		
+	tag															1	1			1		
+	tagət														1							
+apta	apta	100																				
+	abta		1	1		1		1		1												
+	apda		1	1		1		1		1	1											
+	abda		2	2		2		2			1											
+	apa															1	1	1				
+	ata															1	1		1			
+	apəta														1							
+abda	abda	100				2	2															
+	abta		1	1		1	1			1												
+	apda		1	1		1	1			1	1											
+	apta		2	2							1											
+	ada					1	1									1	1		1			
+	aba					1	1									1	1	1				
+	abəda					2	2								1							
+abta	abta	12				1	1			1												
+	apta	88	1	1																		
+	apda		2	2		1		1		1	1											
+	abda		1	1		2	1	1			1											
+	ata															1	1		1			
+	aba					1	1									1	1	1				
+	abəta														1							
+apda	apda	81				1	1			1												
+	abda	19	1	1		2	1	1														
+	apta		1	1							1											
+	abta		2	2		1		1		1	1											
+	ada					1	1									1	1		1			
+	apa															1	1	1				
+	apəda														1							
+pta	pta	100																				
+	bta		1	1		1		1		1												
+	bda		2	2		2		2			1											
+	ta															1	1					
+	pəta														1							
+bda	bda	100				2	2															
+	pda		1	1		1	1			1												
+	pta		2	2							1											
+	da					1	1									1	1					
+	bəda					2	2								1							
+bta	pta	77	1	1																		
+	bta	23				1	1			1												
+	bda		1	1		2	1	1			1											
+	ta															1	1					
+	bəta					1	1								1							
+pda	pda	100				1	1															
+	bda	0	1	1		2	1	1		1												
+	pta		1	1							1											
+	da					1	1									1	1					
+	pəda														1							
+fɛst+gɪʃtɛlt	fɛstgɪʃtɛlt	81				1	1			1												
+	fɛstkɪʃtɛlt		1	1							1											
+	fɛsdgɪʃtɛlt		1	1		2	1	1		1												
+	fɛzdgɪʃtɛlt	19	2	2		3	1	2														
+	fɛztgɪʃtɛlt		1	1		2	1	1		2												
+ɔn-nɛmn	ɔnnɛmən													1	1							
+	ɔn12ɛmən	100													1						1	
+	ɔn2ɛmən														1	1			1			
+	ɔn1ɛmən														1	1	1	1				
+	ɔnənɛmən														2							1
+klʊɡ1+k2ɪnd	klʊɡ1k2ɪnd	12			1	2	2			1												
+	klʊk1k2ɪnd		1	1	1	1	1							1								
+	klʊk2ɪnd				1	1	1									1	1		1			
+	klʊɡ1ɪnd				1	2	2									1	1	1				
+	klʊɡəkɪnd				1	2	2								1							1
+	klʊk12ɪnd	88	1	1	1	1	1														1	
+	klʊɡ12ɪnd		1	1	1	2	2				1										1	
+avɛk1-ɡ2eɪn	avɛk1ɡ2eɪn	81				2	2			1												
+	avɛɡ1ɡ2eɪn		1			3	2	1						1								
+	avɛɡ2eɪn					2	2									1			1			
+	avɛk1eɪn					1	1									1	1	1				
+	avɛkəɡeɪn					2	2								1							1
+	avɛɡ12eɪn	19	1			2	2														1	
+	avɛk12eɪn		1	1		1	1				1										1	
+ʁɛd+t	ʁɛdt													1								
+	ʁɛtt		1											1								
+	ʁɛt_i,j	100																			1	
+	ʁɛd_i,j											1									1	
+	ʁɛd_i									1						1				1		
+	ʁɛt_j															1	1		1			
+	ʁɛdət														1							1

@@ -1,0 +1,20 @@
+Ident(voi)	F
+Ident(voi)/LexCat	Pos F
+*D#	M
+*D	M
+*VoiObst (CM OLD)	M
+*VoiObst (CM NEW)	M
+*DD#	M
+Agree	M
+Ident(voi)/_V	M
+Ident(voi)/_#	Pos F
+Agree _#	M
+*C:	M
+Dep(ə)	F
+Max(C)	M
+Max(C)/Root	Pos F
+Max(C)/_V	Pos F
+Max(C)/V_	Pos F
+Max(C)/_#	Pos F
+Uniformity	F
+*CᵢəCᵢ	M
