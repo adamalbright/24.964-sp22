@@ -1,0 +1,52 @@
+Ident(voi)	F
+Ident(voi)/LexCat	Pos F
+Ident(voi)/_V	Pos F
+Ident(voi)/_[+son]	Pos F
+Ident(voi)/_C	F
+Ident(voi)/_#	Pos F
+*D	M
+*D#	M
+*DD#	M
+Agree	M
+Agree/ _O(O)#	M
+Agree/#_O	M
+Agree/V_O	M
+Agree/C_O	M
+*C:	M
+Dep(ə)	F
+Max(C)	F
+Max(C)/Root	Pos F
+Max(C)/_V	Pos F
+Max(C)/V_	Pos F
+Max(C)/_#	Pos F
+Uniformity	F
+*CᵢəCᵢ	M
+*CiCi	M
+*sts/_¬V	M
+*lS#/nS#	M
+Dep(stop)	F
+BD-Max(C)	OO F
+*rm#	M
+Align-Rt-R	M
+*RK#	M
+BD-Max(V)	OO F
+BI-Max(V)	OO F
+Dep(k)/_[-strid]	Pos F
+Dep(t)/_[+strid]	Pos F
+Dep(p)	Pos F
+Old:*VoiObst	M
+New:*VoiObst	M
+Old:*VoiObst/#_[+son]	M
+New:*VoiObst/#_R	M
+Old:*VoiObst/#_Obst	M
+New:*VoiObst/#_Obst	M
+Old:*VoiObst/V_R	M
+New:*VoiObst/V_R	M
+Old:*VoiObst/Obst_V	M
+New:*VoiObst/Obst_V	M
+Old:*VoiObst/V_Obst	M
+New:*VoiObst/V_Obst	M
+Old:*VoiObst/V_#	M
+New:*VoiObst/V_#	M
+Old:*VoiObst/Obst_#	M
+New:*VoiObst/Obst_#	M
