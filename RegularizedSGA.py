@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Script to do simple perceptron learning (stochastic gradient descent) for a maximum entropy model
 # This follow's Jaeger's proposal for applying stochastic gradient ascent to learn weights for a maxent grammar
 import sys
@@ -10,6 +11,8 @@ try:
 	pyplot_installed = True
 except Exception as e:
 	pyplot_installed = False
+from os.path import exists
+
 
 # quick little function to check whether something is a number (specifically, a float).  This specific version came from: https://stackoverflow.com/questions/736043/checking-if-a-string-can-be-converted-to-float-in-python
 def isfloat(value):
@@ -23,6 +26,8 @@ def isfloat(value):
 number_of_learning_trials = 5000
 initial_markedness_weight = 10
 initial_faithfulness_weight = 0
+initial_pos_faithfulness_weight = 5
+initial_oo_faithfulness_weight = 15
 initial_weight = 0
 initial_plasticity = .1
 mu_default = 0
@@ -161,12 +166,16 @@ log_file.write('Length of training data: %s inputs, %s outputs\n\n' % (len(train
 initial_weights = [ '' ]*len(constraint_names)
 
 filename_prefix = re.sub('\.[^\.]*$', '', input_filename)
-constraints_filename = filename_prefix + ".constraints.tsv"
+constraints_filename = filename_prefix + ".constraints"
 constraints_file = open(constraints_filename, 'r').read().splitlines()
 for line in constraints_file:
 	name, type, *rest = line.split('\t')
 	if re.match('^[Mm]', type):
 		type = 'M'		
+	elif re.match('^(Pos|POS) [Ff]', type):
+		type = 'Pos F'
+	elif re.match('^OO( |-)[Ff]', type):
+		type = 'OO F'
 	elif re.match('^[Ff]', type):
 		type = 'F'
 	elif re.match('^[Rr]a?nd', type):
@@ -184,49 +193,6 @@ for line in constraints_file:
 
 log_file.write( "Constraint types: %s\n\n" %  initial_weights)
 
-# Now the file of mu and sigma_sq for each constraint
-if len(sys.argv) > 2:
-	regularization_filename = sys.argv[2]
-else:
-	regularization_filename = filename_prefix + ".regularize.tsv"
-
-try:	
-	regularization_file = open(regularization_filename, 'r').read().splitlines()
-except IOException as e:
-	print("Error! Can't open regularization file %s\n\t%s" % (regularization_file, e))
-
-mus = [ mu_default ]*len(constraint_names)
-sigma_sqs = [ sigma_sq_default ]*len(constraint_names)
-lambdas = [ (float(1)/sigma_sq_default) ]*len(constraint_names)
-for line in regularization_file:
-	name, mu, sigma_sq = line.split('\t')
-	try:
-		mu = float(mu)
-	except Exception as e:
-		print( "Error! Can't parse mu value in line:\n\t%s" % line)
-	try:
-		sigma_sq = float(sigma_sq)
-	except Exception as e:
-		print( "Error! Can't parse σ² value in line:\n\t%s" % line)
-
-	try:
-		mus[ constraint_index[name] ] = mu
-		sigma_sqs[ constraint_index[name] ] = sigma_sq
-		# Wilson regularizes by 1/(2*sigma^2)
-		# The regularization term is (weight-mu)^2/(2*sigma^2)
-		# Differentiate to find the update:  (weight-mu)/sigma^2
-		# So, the lambda in the update is 1/sigma^2
-		lambdas[ constraint_index[name] ] = reg_weight / sigma_sq
-
-	except Exception as error:
-		print( "Unknown constraint %s in constraints file: %s" % (constraint_index[name], error))
-
-log_file.write( "Regularization:\n")
-log_file.write( "µ values: %s\n" %  mus)
-log_file.write( "σ² values: %s\n" %  sigma_sqs)
-log_file.write( "λ values: %s\n\n" %  lambdas)
-
-
 # Initialize the weights to their initial values
 weights = [ 0 ] *len(constraint_names)
 for c in range(0, len(constraint_names)):
@@ -243,6 +209,10 @@ for c in range(0, len(constraint_names)):
 		# Otherwise, use the default faithfulness and markedness values
 		elif initial_weights[ c ] == 'F':
 			weights[c] = initial_faithfulness_weight
+		elif initial_weights[ c ] == 'Pos F':
+			weights[c] = initial_pos_faithfulness_weight
+		elif initial_weights[ c ] == 'OO F':
+			weights[c] = initial_oo_faithfulness_weight
 		elif initial_weights[ c ] == 'M':
 			weights[c] = initial_markedness_weight
 		# And if all else fails, use the general default
@@ -250,6 +220,57 @@ for c in range(0, len(constraint_names)):
 			weights[c] = initial_weight
 	except Exception as error:
 		print( "Constraint %s has no given constraint type: %s" % (c, error) )
+
+# Now the file of mu and sigma_sq for each constraint
+if len(sys.argv) > 2:
+	regularization_filename = sys.argv[2]
+else:
+	regularization_filename = filename_prefix + ".regularize"
+
+if exists(regularization_filename):
+	try:	
+		regularization_file = open(regularization_filename, 'r').read().splitlines()
+	except FileNotFoundError as e:
+		print("Error! Can't open regularization file %s\n\t%s" % (regularization_file, e))
+
+	mus = [ mu_default ]*len(constraint_names)
+	sigma_sqs = [ sigma_sq_default ]*len(constraint_names)
+	lambdas = [ (float(1)/sigma_sq_default) ]*len(constraint_names)
+	for line in regularization_file:
+		name, mu, sigma_sq = line.split('\t')
+		try:
+			mu = float(mu)
+		except Exception as e:
+			print( "Error! Can't parse mu value in line:\n\t%s" % line)
+		try:
+			sigma_sq = float(sigma_sq)
+		except Exception as e:
+			print( "Error! Can't parse σ² value in line:\n\t%s" % line)
+
+		try:
+			mus[ constraint_index[name] ] = mu
+			sigma_sqs[ constraint_index[name] ] = sigma_sq
+			# Wilson regularizes by 1/(2*sigma^2)
+			# The regularization term is (weight-mu)^2/(2*sigma^2)
+			# Differentiate to find the update:  (weight-mu)/sigma^2
+			# So, the lambda in the update is 1/sigma^2
+			lambdas[ constraint_index[name] ] = reg_weight / sigma_sq
+
+		except Exception as error:
+			print( "Unknown constraint %s in constraints file: %s" % (constraint_index[name], error))
+else:
+	# Just use the defaults
+	mus = weights
+	sigma_sqs = [ sigma_sq_default ]*len(constraint_names)
+	lambdas = [ (float(1)/sigma_sq_default) ]*len(constraint_names)
+
+log_file.write( "Regularization:\n")
+log_file.write( "µ values: %s\n" %  mus)
+log_file.write( "σ² values: %s\n" %  sigma_sqs)
+log_file.write( "λ values: %s\n\n" %  lambdas)
+
+
+
 log_file.write( 'Initial weights: %s\n\n' % weights)
 
 # Now for learning
