@@ -8,10 +8,10 @@ Ident(voi)/_#	Pos F
 *D#	M
 *DD#	M
 Agree	M
-Agree/ _O(O)#	M
-Agree/#_O	M
-Agree/V_O	M
-Agree/C_O	M
+Agree-_O(O)#	M
+Agree-#_O	M
+Agree-V_O	M
+Agree-C_O	M
 *C:	M
 Dep(ə)	F
 Max(C)	F
@@ -20,6 +20,8 @@ Max(C)/_V	Pos F
 Max(C)/V_	Pos F
 Max(C)/_#	Pos F
 Uniformity	F
+I-Contig	F
+IO-Id(pl/manner)	F
 *CᵢəCᵢ	M
 *CiCi	M
 *sts/_¬V	M
@@ -34,19 +36,20 @@ BI-Max(V)	OO F
 Dep(k)/_[-strid]	Pos F
 Dep(t)/_[+strid]	Pos F
 Dep(p)	Pos F
-Old:*VoiObst	M
-New:*VoiObst	M
-Old:*VoiObst/#_[+son]	M
-New:*VoiObst/#_R	M
-Old:*VoiObst/#_Obst	M
-New:*VoiObst/#_Obst	M
-Old:*VoiObst/V_R	M
-New:*VoiObst/V_R	M
-Old:*VoiObst/Obst_V	M
-New:*VoiObst/Obst_V	M
-Old:*VoiObst/V_Obst	M
-New:*VoiObst/V_Obst	M
-Old:*VoiObst/V_#	M
-New:*VoiObst/V_#	M
-Old:*VoiObst/Obst_#	M
-New:*VoiObst/Obst_#	M
+Old:*D	M
+New:*D	M
+Old:*D/#_R	M
+New:*D/#_R	M
+Old:*D/#_T	M
+New:*D/#_T	M
+Old:*D/V_R	M
+New:*D/V_R	M
+Old:*D/T_V	M
+New:*D/T_V	M
+Old:*D/V_T	M
+New:*D/V_T	M
+Old:*D/V_#	M
+New:*D/V_#	M
+Old:*D/T_#	M
+New:*D/T_#	M
+*NN#	M
